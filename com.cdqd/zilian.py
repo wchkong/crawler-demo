@@ -6,7 +6,7 @@ import csv
 import os
 import json
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-'''由于反爬措施比较多破解比较麻烦，这里使用无头浏览器抓去'''
+'''由于反爬措施比较多破解比较麻烦，这里使用无头浏览器抓取，要改geckodriver_path'''
 
 
 def selenium_request(req_url):
@@ -18,8 +18,7 @@ def selenium_request(req_url):
 
     caps = webdriver.DesiredCapabilities().FIREFOX
     caps['marionette'] = True
-    binary = FirefoxBinary(r'/Applications/Firefox.app/Contents/MacOS/firefox')
-    fox = webdriver.Firefox(firefox_binary=binary, capabilities=caps, firefox_profile=profile,
+    fox = webdriver.Firefox(capabilities=caps, firefox_profile=profile,
                            executable_path='geckodriver_path', options=options)
     # 开始请求
     fox.get(req_url)
