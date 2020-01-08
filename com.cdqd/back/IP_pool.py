@@ -3,7 +3,7 @@ import requests
 from scrapy.selector import Selector
 
 # 数据库连接
-conn = pymysql.connect(host='192.168.3.226', port=3306, user='root', passwd='cdqd-passw0rd', db='web_crawler', charset='utf8')
+conn = pymysql.connect(host='192.168.3.226', port=3306, user='root', passwd='root', db='web_crawler', charset='utf8')
 cursor = conn.cursor()
 
 
